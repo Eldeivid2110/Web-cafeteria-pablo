@@ -1,10 +1,10 @@
 console.log("pagina cargada");
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Función para asignar eventos a botones "ver más"
   function asignarEventosVerMas(contenedor) {
     contenedor.querySelectorAll('.ver-mas-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         document.getElementById('modal-title').textContent = btn.dataset.title;
         document.getElementById('modal-desc').textContent = btn.dataset.desc;
         document.getElementById('modal-precio').textContent = btn.dataset.precio;
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Modal "ver más"
   document.querySelectorAll('.ver-mas-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       document.getElementById('modal-title').textContent = btn.dataset.title;
       document.getElementById('modal-desc').textContent = btn.dataset.desc;
       document.getElementById('modal-precio').textContent = btn.dataset.precio;
@@ -23,31 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.getElementById('close-modal').onclick = function() {
+  document.getElementById('close-modal').onclick = function () {
     document.getElementById('modal-detalles').style.display = "none";
   };
 
   // Modal info (dirección, horarios)
-  document.getElementById('open-info-modal').onclick = function() {
+  document.getElementById('open-info-modal').onclick = function () {
     document.getElementById('modal-info').style.display = "flex";
   };
-  document.getElementById('close-info-modal').onclick = function() {
+  document.getElementById('close-info-modal').onclick = function () {
     document.getElementById('modal-info').style.display = "none";
   };
 
   // Sidebar
-  document.getElementById('open-sidebar').onclick = function() {
+  document.getElementById('open-sidebar').onclick = function () {
     document.getElementById('sidebar').style.display = 'block';
   };
-  document.getElementById('close-sidebar').onclick = function() {
+  document.getElementById('close-sidebar').onclick = function () {
     document.getElementById('sidebar').style.display = 'none';
   };
-  document.getElementById('sidebar-overlay').onclick = function() {
+  document.getElementById('sidebar-overlay').onclick = function () {
     document.getElementById('sidebar').style.display = 'none';
   };
 
   // Cerrar modales al hacer click fuera
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target === document.getElementById('modal-detalles')) {
       document.getElementById('modal-detalles').style.display = "none";
     }
@@ -61,13 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Cambiar de categoría desde menú superior
   document.querySelectorAll('.menu-bar a').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
-      // Quitar clase activa
       document.querySelectorAll('.menu-bar a').forEach(a => a.classList.remove('menu-active'));
       this.classList.add('menu-active');
 
-      // Cambiar título
       const categoria = this.dataset.categoria || this.textContent;
       document.getElementById('categoria-titulo').textContent = categoria;
 
@@ -86,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Cambiar de categoría desde sidebar
   document.querySelectorAll('.sidebar-list li').forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       const categoria = this.dataset.categoria || this.querySelector('.sidebar-cat-title').textContent;
       document.getElementById('categoria-titulo').textContent = categoria;
 
@@ -103,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       document.getElementById('sidebar').style.display = 'none';
 
-      // Cambiar activo en menú superior
       document.querySelectorAll('.menu-bar a').forEach(a => {
         if (a.dataset.categoria === categoria) {
           a.classList.add('menu-active');

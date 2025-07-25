@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Café Moksha - Menú</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
   <header class="header-bar">
@@ -33,7 +33,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
     <div class="sidebar-content">
-      <span class="close-sidebar" id="close-sidebar">&times;</span>
+      <button class="close-sidebar" id="close-sidebar" aria-label="Cerrar menú">&times;</button>
       <h2 class="sidebar-title">Categorías</h2>
       <ul class="sidebar-list">
         <li data-categoria="Café"><span class="sidebar-cat-title">Café</span><span class="sidebar-cat-count">6 productos</span></li>
@@ -50,21 +50,21 @@
       <div class="cafes-grid" id="cafes-original">
         <div class="cafes-col">
           <div class="cafe-item">
-            <img src="img/cortadito.jpg" alt="Cortadito">
+            <img src="img/cortadito.jpg" alt="Cortadito" />
             <div>
               <h2>Cortadito</h2>
               <p>Espresso suave cortado con un toque de leche caliente.</p>
             </div>
           </div>
           <div class="cafe-item">
-            <img src="img/cafeamericano.jpg" alt="Americano">
+            <img src="img/cafeamericano.jpg" alt="Americano" />
             <div>
               <h2>Americano</h2>
               <p>Espresso suavizado con agua caliente.</p>
             </div>
           </div>
           <div class="cafe-item">
-            <img src="img/lagrimas.jpg" alt="Lágrimas">
+            <img src="img/lagrimas.jpg" alt="Lágrimas" />
             <div>
               <h2>Lágrimas</h2>
               <p>Leche caliente con unas gotas de café espresso.</p>
@@ -73,21 +73,21 @@
         </div>
         <div class="cafes-col">
           <div class="cafe-item">
-            <img src="img/cafeconleche.jpg" alt="Café con leche">
+            <img src="img/cafeconleche.jpg" alt="Café con leche" />
             <div>
               <h2>Café con leche</h2>
               <p>Mitad café espresso, mitad leche caliente. El clásico desayuno argentino.</p>
             </div>
           </div>
           <div class="cafe-item">
-            <img src="img/capuccino.jpg" alt="Capuccino">
+            <img src="img/capuccino.jpg" alt="Capuccino" />
             <div>
               <h2>Capuccino</h2>
               <p>Espresso, leche y espuma cremosa, con un toque de cacao.</p>
             </div>
           </div>
           <div class="cafe-item">
-            <img src="img/latte.jpg" alt="Latte">
+            <img src="img/latte.jpg" alt="Latte" />
             <div>
               <h2>Latte</h2>
               <p>Espresso suave con abundante leche vaporizada, ideal para cualquier momento.</p>
@@ -98,12 +98,12 @@
     </div>
 
     <section class="moksha-team" id="quienes-somos">
-      <h2>Quienes somos en <span style="color:#a67c52;">MOKSHA</span></h2>
+      <h2>Quiénes somos en <span style="color:#a67c52;">MOKSHA</span></h2>
       <div class="team-members">
         <div class="team-member">
           <h3>SANTINO</h3>
-          <strong>EL CATADOR DE COFFE</strong>
-          <p>Si hay un coffe nuevo, él es el encargado de la degustación con su paladar crítico.</p>
+          <strong>EL CATADOR DE COFFEE</strong>
+          <p>Si hay un café nuevo, él es el encargado de la degustación con su paladar crítico.</p>
         </div>
         <div class="team-member">
           <h3>ELVIRA</h3>
@@ -111,7 +111,7 @@
           <p>La dueña, la que todas las mañanas se levanta con una sonrisa, dispuesta a cambiar su mundo...</p>
         </div>
         <div class="team-member">
-          <h3>Pablo</h3>
+          <h3>PABLO</h3>
           <strong>Asistente y mano derecha</strong>
         </div>
       </div>
@@ -135,7 +135,7 @@
             <span>- Lucas P.</span>
           </div>
           <div class="testimonio">
-            <p>"El café y los sandwiches son increíbles. ¡Siempre salgo con una sonrisa!"</p>
+            <p>"El café y los sándwiches son increíbles. ¡Siempre salgo con una sonrisa!"</p>
             <span>- Carla M.</span>
           </div>
         </div>
@@ -145,7 +145,7 @@
 
   <div class="modal" id="modal-detalles">
     <div class="modal-content">
-      <span class="close-modal" id="close-modal">&times;</span>
+      <button class="close-modal" id="close-modal" aria-label="Cerrar">&times;</button>
       <h2 id="modal-title"></h2>
       <p id="modal-desc"></p>
       <div class="modal-precio" id="modal-precio"></div>
@@ -154,7 +154,7 @@
 
   <div class="modal" id="modal-info">
     <div class="modal-content">
-      <span class="close-modal" id="close-info-modal">&times;</span>
+      <button class="close-modal" id="close-info-modal" aria-label="Cerrar">&times;</button>
       <h2>Dirección y horarios</h2>
       <p><strong>Dirección:</strong> Florida 400 YPF</p>
       <p><strong>Horario:</strong> 7:30 a 14hs y 16:30 a 23hs</p>
