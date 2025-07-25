@@ -1,7 +1,19 @@
 console.log("pagina cargada");
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Modal de "Ver más"
+  // Función para asignar eventos a botones "ver más"
+  function asignarEventosVerMas(contenedor) {
+    contenedor.querySelectorAll('.ver-mas-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.getElementById('modal-title').textContent = btn.dataset.title;
+        document.getElementById('modal-desc').textContent = btn.dataset.desc;
+        document.getElementById('modal-precio').textContent = btn.dataset.precio;
+        document.getElementById('modal-detalles').style.display = "flex";
+      });
+    });
+  }
+
+  // Modal "ver más"
   document.querySelectorAll('.ver-mas-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       document.getElementById('modal-title').textContent = btn.dataset.title;
@@ -10,11 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('modal-detalles').style.display = "flex";
     });
   });
+
   document.getElementById('close-modal').onclick = function() {
     document.getElementById('modal-detalles').style.display = "none";
   };
 
-  // Modal de info dirección y horarios
+  // Modal info (dirección, horarios)
   document.getElementById('open-info-modal').onclick = function() {
     document.getElementById('modal-info').style.display = "flex";
   };
@@ -43,19 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Formulario de contacto/pedido por WhatsApp
-  document.getElementById('contact-form').onsubmit = function(e) {
-    e.preventDefault();
-    const nombre = this.nombre.value;
-    const producto = this.producto.value;
-    const cantidad = this.cantidad.value;
-    const mensaje = this.mensaje.value;
-    // Número de WhatsApp del negocio:
-    const numero = "549XXXXXXXXXX"; // <-- Cambia por tu número con código de país
-    const texto = encodeURIComponent(`Hola! Soy ${nombre}. Quiero pedir: ${cantidad} x ${producto}.
-${mensaje ? "Mensaje adicional: " + mensaje : ""}`);
-    window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
-  };
+  // Guardamos el nodo original de productos de Café
+  const gridCafesOriginal = document.querySelector('.cafes-grid');
 
   // Cambiar de categoría desde menú superior
   document.querySelectorAll('.menu-bar a').forEach(link => {
@@ -64,10 +66,21 @@ ${mensaje ? "Mensaje adicional: " + mensaje : ""}`);
       // Quitar clase activa
       document.querySelectorAll('.menu-bar a').forEach(a => a.classList.remove('menu-active'));
       this.classList.add('menu-active');
-      // Cambiar título principal
+
+      // Cambiar título
       const categoria = this.dataset.categoria || this.textContent;
       document.getElementById('categoria-titulo').textContent = categoria;
-      document.getElementById('categoria-productos').innerHTML = `<p style="color:#aaa;text-align:center;margin:2rem 0;">No hay productos agregados en esta categoría.</p>`;
+
+      const contenedor = document.getElementById('categoria-productos');
+      contenedor.innerHTML = "";
+
+      if (categoria === "Café") {
+        const clon = gridCafesOriginal.cloneNode(true);
+        contenedor.appendChild(clon);
+        asignarEventosVerMas(contenedor);
+      } else {
+        contenedor.innerHTML = `<p style="color:#aaa;text-align:center;margin:2rem 0;">No hay productos agregados en esta categoría.</p>`;
+      }
     });
   });
 
@@ -76,11 +89,23 @@ ${mensaje ? "Mensaje adicional: " + mensaje : ""}`);
     item.addEventListener('click', function() {
       const categoria = this.dataset.categoria || this.querySelector('.sidebar-cat-title').textContent;
       document.getElementById('categoria-titulo').textContent = categoria;
-      document.getElementById('categoria-productos').innerHTML = `<p style="color:#aaa;text-align:center;margin:2rem 0;">No hay productos agregados en esta categoría.</p>`;
+
+      const contenedor = document.getElementById('categoria-productos');
+      contenedor.innerHTML = "";
+
+      if (categoria === "Café") {
+        const clon = gridCafesOriginal.cloneNode(true);
+        contenedor.appendChild(clon);
+        asignarEventosVerMas(contenedor);
+      } else {
+        contenedor.innerHTML = `<p style="color:#aaa;text-align:center;margin:2rem 0;">No hay productos agregados en esta categoría.</p>`;
+      }
+
       document.getElementById('sidebar').style.display = 'none';
-      // Cambia activo en el menú top
+
+      // Cambiar activo en menú superior
       document.querySelectorAll('.menu-bar a').forEach(a => {
-        if(a.dataset.categoria === categoria){
+        if (a.dataset.categoria === categoria) {
           a.classList.add('menu-active');
         } else {
           a.classList.remove('menu-active');
