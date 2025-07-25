@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Elvira - Menú</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header class="header-bar">
+    <div class="logo">
+      <!-- <img src="img/logo.png" alt="Café Elvira Logo"> -->
+    </div>
+    <div class="brand-title">CAFÉ ELVIRA</div>
+    <div class="header-icons">
+      <span title="Información"><i class="fa-regular fa-circle-question"></i></span>
+      <span title="Compartir"><i class="fa-solid fa-share-nodes"></i></span>
+      <span title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></span>
+      <span title="Instagram"><i class="fa-brands fa-instagram"></i></span>
+      <span title="Facebook"><i class="fa-brands fa-facebook"></i></span>
+    </div>
+  </header>
+  <nav class="menu-bar">
+  <span class="menu-icon" id="open-sidebar"><i class="fa-solid fa-bars"></i></span>
+  <!-- Signo de exclamación aquí -->
+  <span class="info-icon" id="open-info-modal"><i class="fa-solid fa-circle-exclamation"></i></span>
+  <a href="#" class="menu-active">Cafés calientes</a>
+  <a href="#">Cafés fríos</a>
+  <a href="#">Brunch a toda hora</a>
+  <a href="#">Sandwiches</a>
+  <a href="#">Ensaladas</a>
+  <a href="#">Otras bebidas</a>
+  <a href="#">Tentempiés para llevar</a>
+  <a href="#" data-section="otros">Otros productos</a>
+</nav>
+  <!-- Sidebar Categorías -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar-content">
+      <span class="close-sidebar" id="close-sidebar">&times;</span>
+      <h2 class="sidebar-title">Categorías</h2>
+      <ul class="sidebar-list">
+        <li>
+          <span class="sidebar-cat-title">Cafés calientes</span>
+          <span class="sidebar-cat-count">18 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Cafés fríos</span>
+          <span class="sidebar-cat-count">9 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Brunch a toda hora</span>
+          <span class="sidebar-cat-count">16 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Sandwiches</span>
+          <span class="sidebar-cat-count">8 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Ensaladas</span>
+          <span class="sidebar-cat-count">4 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Otras bebidas</span>
+          <span class="sidebar-cat-count">9 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Tentempiés para llevar</span>
+          <span class="sidebar-cat-count">7 productos</span>
+        </li>
+        <li>
+          <span class="sidebar-cat-title">Panes para llevar</span>
+          <span class="sidebar-cat-count">6 productos</span>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <h1>Cafés calientes</h1>
+    <div class="cafes-grid">
+      <div class="cafes-col">
+        <div class="cafe-item">
+          <div>
+            <h2>Espresso simple-doble-alternativo</h2>
+            <p>La alta presión del agua, que atraviesa los granos molidos bien finos, produce esta bebida bien corpulenta, y llena de intensidad de sabor.</p>
+            <span class="precio">$ 1.000,00</span>
+            <button class="ver-mas-btn" data-title="Espresso simple-doble-alternativo"
+              data-desc="La alta presión del agua, que atraviesa los granos molidos bien finos, produce esta bebida bien corpulenta, y llena de intensidad de sabor."
+              data-precio="$ 1.000,00">Ver más</button>
+          </div>
+        </div>
+        <div class="cafe-item">
+          <div>
+            <h2>Long black</h2>
+            <p>Es un espresso pero más ligero que su referente estándar, por tanto, se encuentra un poco diluido. A la medida del espresso, se le suma agua caliente.</p>
+            <span class="precio">$ 1.500,00</span>
+            <button class="ver-mas-btn" data-title="Long black"
+              data-desc="Es un espresso pero más ligero que su referente estándar, por tanto, se encuentra un poco diluido. A la medida del espresso, se le suma agua caliente."
+              data-precio="$ 1.500,00">Ver más</button>
+          </div>
+        </div>
+        <div class="cafe-item">
+          <div>
+            <h2>Macchiato</h2>
+            <p>Viene del italiano “manchado” y significa un espresso con apenas un chorrito de leche. No se debe confundir con un cortado, ya que llevan diferente proporción de leche.</p>
+            <span class="precio">$ 1.300,00</span>
+            <button class="ver-mas-btn" data-title="Macchiato"
+              data-desc="Viene del italiano “manchado” y significa un espresso con apenas un chorrito de leche. No se debe confundir con un cortado, ya que llevan diferente proporción de leche."
+              data-precio="$ 1.300,00">Ver más</button>
+          </div>
+        </div>
+        <div class="cafe-item">
+          <div>
+            <h2>Cappuccino</h2>
+            <p>Este es un cappuccino clásico que contiene un shot de espresso y luego el remanente son dos partes, una leche y otra de espuma con una textura cremosa.</p>
+            <span class="precio">$ 1.700,00</span>
+            <button class="ver-mas-btn" data-title="Cappuccino"
+              data-desc="Este es un cappuccino clásico que contiene un shot de espresso y luego el remanente son dos partes, una leche y otra de espuma con una textura cremosa."
+              data-precio="$ 1.700,00">Ver más</button>
+          </div>
+        </div>
+      </div>
+      <div class="cafes-col">
+        <div class="cafe-item">
+          <div>
+            <h2>Lungo</h2>
+            <p>Es un espresso pero más ligero que su referente estándar, por tanto, se encuentra un poco diluido. Durante la extracción, corre casi el doble de agua.</p>
+            <span class="precio">$ 1.200,00</span>
+            <button class="ver-mas-btn" data-title="Lungo"
+              data-desc="Es un espresso pero más ligero que su referente estándar, por tanto, se encuentra un poco diluido. Durante la extracción, corre casi el doble de agua."
+              data-precio="$ 1.200,00">Ver más</button>
+          </div>
+        </div>
+        <div class="cafe-item">
+          <div>
+            <h2>Americano</h2>
+            <p>Durante la segunda guerra mundial, los soldados americanos en Italia pedían que le agreguen agua a sus espressos, para aliviarlos y así nació el café americano.</p>
+            <span class="precio">$ 1.300,00</span>
+            <button class="ver-mas-btn" data-title="Americano"
+              data-desc="Durante la segunda guerra mundial, los soldados americanos en Italia pedían que le agreguen agua a sus espressos, para aliviarlos y así nació el café americano."
+              data-precio="$ 1.300,00">Ver más</button>
+          </div>
+        </div>
+        <div class="cafe-item">
+          <div>
+            <h2>Americano cortado</h2>
+            <p>Algunos lo llaman cortado, otros Gibraltar, para nosotros es una de nuestras más delicadas y mejores ofertas de café, y consiste en un espresso con un poco de leche caliente.</p>
+            <span class="precio">$ 1.500,00</span>
+            <button class="ver-mas-btn" data-title="Americano cortado"
+              data-desc="Algunos lo llaman cortado, otros Gibraltar, para nosotros es una de nuestras más delicadas y mejores ofertas de café, y consiste en un espresso con un poco de leche caliente."
+              data-precio="$ 1.500,00">Ver más</button>
+          </div>
+        </div>
+        <div class="cafe-item">
+          <div>
+            <h2>Mokaccino</h2>
+            <p>Un cappuccino con base de chocolate además del espresso y leche. Una combinación ideal.</p>
+            <span class="precio">$ 1.800,00</span>
+            <button class="ver-mas-btn" data-title="Mokaccino"
+              data-desc="Un cappuccino con base de chocolate además del espresso y leche. Una combinación ideal."
+              data-precio="$ 1.800,00">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Modal para "Ver más" detalles -->
+  <div class="modal" id="modal-detalles">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <div class="modal-precio" id="modal-precio"></div>
+    </div>
+  </div>
+
+  <!-- MODAL: dirección y horarios -->
+  <div class="modal" id="modal-info">
+    <div class="modal-content">
+      <span class="close-modal" id="close-info-modal">&times;</span>
+      <h2>Dirección y horarios</h2>
+      <p><strong>Dirección:</strong> Florida 400 YPF</p>
+      <p><strong>Horario:</strong> 7:30 a 14hs y 16:30 a 23hs</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<section class="moksha-team">
+  <h2>Quienes somos en <span style="color:#a67c52;">MOKSHA</span></h2>
+  <div class="team-members">
+    <div class="team-member">
+      <h3>SANTINO</h3>
+      <strong>EL CATADOR DE COFFE</strong>
+      <p>Si hay un coffe nuevo, él es el encargado de la degustación con su paladar crítico.</p>
+    </div>
+    <div class="team-member">
+      <h3>ELVIRA</h3>
+      <strong>La Cafetera</strong>
+      <p>La dueña, la que todas las mañanas se levanta con una sonrisa, dispuesta a cambiar su mundo...</p>
+    </div>
+    <div class="team-member">
+      <h3>Pablo</h3>
+      <strong>Asistente y mano derecha</strong>
+    </div>
+  </div>
+  <div class="testimonios">
+    <h3>Testimonios</h3>
+    <div class="testimonios-list">
+      <div class="testimonio">
+        <p>"El café de MOKSHA es el mejor que probé en la ciudad. Siempre vuelvo por el cappuccino."</p>
+        <span>- Camila G.</span>
+      </div>
+      <div class="testimonio">
+        <p>"Elvira y su equipo hacen que cada visita sea especial. ¡La atención es excelente!"</p>
+        <span>- Martín R.</span>
+      </div>
+      <div class="testimonio">
+        <p>"Me encanta la variedad de opciones y el ambiente cálido. Recomiendo el brunch."</p>
+        <span>- Sofía T.</span>
+      </div>
+      <div class="testimonio">
+        <p>"Santino sabe de café. Si hay una novedad, confío en su recomendación."</p>
+        <span>- Lucas P.</span>
+      </div>
+      <div class="testimonio">
+        <p>"El café y los sandwiches son increíbles. ¡Siempre salgo con una sonrisa!"</p>
+        <span>- Carla M.</span>
+      </div>
+    </div>
+  </div>
+</section>
+</html>
